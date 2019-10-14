@@ -9,7 +9,11 @@ public class Scenery {
     }
 
     public static void main(String[] args) {
-
+    	Baum baum = new Baum ();
+    	baum.einlesen();
+    	baum.stamm();
+    	baum.lkrone();
+    	baum.nKrone();
     }
 
 }
