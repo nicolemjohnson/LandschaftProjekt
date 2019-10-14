@@ -32,7 +32,16 @@ public class Baum {
 		square.draw();
 	}
 	
-	
+	void auswahl () {
+		System.out.println("Nadel(N) oder Laubbaum (L)");
+		String baum = scanner.next();
+		if (baum.equalsIgnoreCase("N")) {
+			nKrone();
+		}
+		if (baum.equalsIgnoreCase("L")) {
+			lkrone();
+		}
+	}
 
 	void lkrone() {
 		Ellipse ellipse = new Ellipse(stammPosX-12, stammPosY-36, laubKroneBreite, laubKroneHoehe, "green");
