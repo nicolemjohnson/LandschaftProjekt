@@ -3,14 +3,14 @@ import java.util.Scanner;
 public class Baum {
 
 	Scanner scanner = new Scanner(System.in);
-
+ // public static final (Datentyp) NAME = wert;
 	int stammDimension = 16;
 	int stammPosY;
 	int stammPosX;
 	int kronenBreite = 40;
 	int kronenHoehe = 40;
-	int kversetzungswertY= 12;
-	int kversetzungswertX= 36;
+	int kversetzungswertY = 12;
+	int kversetzungswertX = 36;
 
 	void start() {
 
@@ -46,12 +46,14 @@ public class Baum {
 	}
 
 	void lkrone() {
-		Ellipse ellipse = new Ellipse(stammPosY - kversetzungswertY, stammPosX - kversetzungswertX, kronenBreite, kronenHoehe, "green");
+		Ellipse ellipse = new Ellipse(stammPosY - kversetzungswertY, stammPosX - kversetzungswertX, kronenBreite,
+				kronenHoehe, "green");
 		ellipse.draw();
 	}
 
 	void nKrone() {
-		Triangle triangle = new Triangle(stammPosY - kversetzungswertY, stammPosX - kversetzungswertX, kronenBreite, kronenHoehe, "firGreen");
+		Triangle triangle = new Triangle(stammPosY - kversetzungswertY, stammPosX - kversetzungswertX, kronenBreite,
+				kronenHoehe, "firGreen");
 		triangle.draw();
 	}
 
