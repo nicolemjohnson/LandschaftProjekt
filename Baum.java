@@ -5,34 +5,23 @@ public class Baum {
 	Scanner scanner = new Scanner(System.in);
 
 	int stammDimension = 16;
-	int stammPosX;
 	int stammPosY;
-	int laubKroneBreite = 40;
-	int laubKroneHoehe = 40;
-	
-	void start () {
-		
+	int stammPosX;
+	int kronenBreite = 40;
+	int kronenHoehe = 40;
+	int kversetzungswertY= 12;
+	int kversetzungswertX= 36;
+
+	void start() {
+
 		while (true) {
-			einlesen();
-			
+			auswahl();
+
 		}
 	}
-	
-	
-	void einlesen() {
-		System.out.println("Bitte Geben Sie die Y Koordinate ein");
-		stammPosY = scanner.nextInt();
-		System.out.println("Bitte Geben Sie die X Koordinate ein");
-		stammPosX = scanner.nextInt();
-	}
 
-
-	void stamm() {
-		Square square = new Square(stammPosX, stammPosY, stammDimension, "brown");
-		square.draw();
-	}
-	
-	void auswahl () {
+	void auswahl() {
+		einlesen();
 		System.out.println("Nadel(N) oder Laubbaum (L)");
 		String baum = scanner.next();
 		if (baum.equalsIgnoreCase("N")) {
@@ -41,15 +30,28 @@ public class Baum {
 		if (baum.equalsIgnoreCase("L")) {
 			lkrone();
 		}
+		stamm();
+	}
+
+	void einlesen() {
+		System.out.println("Bitte Geben Sie die X Koordinate ein");
+		stammPosX = scanner.nextInt();
+		System.out.println("Bitte Geben Sie die Y Koordinate ein");
+		stammPosY = scanner.nextInt();
+	}
+
+	void stamm() {
+		Square square = new Square(stammPosY, stammPosX, stammDimension, "brown");
+		square.draw();
 	}
 
 	void lkrone() {
-		Ellipse ellipse = new Ellipse(stammPosX-12, stammPosY-36, laubKroneBreite, laubKroneHoehe, "green");
+		Ellipse ellipse = new Ellipse(stammPosY - kversetzungswertY, stammPosX - kversetzungswertX, kronenBreite, kronenHoehe, "green");
 		ellipse.draw();
 	}
-	
-	void nKrone () {
-		Triangle triangle = new Triangle (stammPosX-12, stammPosY-36, laubKroneBreite, laubKroneHoehe, "firGreen");
+
+	void nKrone() {
+		Triangle triangle = new Triangle(stammPosY - kversetzungswertY, stammPosX - kversetzungswertX, kronenBreite, kronenHoehe, "firGreen");
 		triangle.draw();
 	}
 
