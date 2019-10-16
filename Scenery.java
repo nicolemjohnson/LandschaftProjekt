@@ -9,9 +9,9 @@ public class Scenery {
     }
 
     public static void main(String[] args) {
-    	Baum baum = new Baum ();
-    	baum.start();
-    	
+    	Auswahl auswahl = new Auswahl();
+    	auswahl.start();
+    
     }
 
 }
